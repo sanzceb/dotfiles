@@ -1,0 +1,21 @@
+[user]
+	name = Sergio Sanz
+	email = ssanz.ceb@outlook.com
+[core]
+	# embedded vim will be the fallback editor
+	editor = nvim || vim
+	autocrlf = false
+[init]
+	defaultBranch = main
+[diff]
+    tool = nvimdiff || vimdiff
+[difftool]
+	prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[mergetool]
+# Avoid git asks for confirmation
+    prompt = false 
+[mergetool "nvimdiff"]
+# -c 'wincmd J' moves the merge result window to the bottom
+    cmd = nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd J'
