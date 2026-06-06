@@ -8,14 +8,17 @@
 [init]
 	defaultBranch = main
 [diff]
-    tool = nvimdiff || vimdiff
+	tool = nvimdiff || vimdiff
 [difftool]
 	prompt = false
 [difftool "nvimdiff"]
-    cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 [mergetool]
 # Avoid git asks for confirmation
-    prompt = false 
+	prompt = false 
 [mergetool "nvimdiff"]
 # -c 'wincmd J' moves the merge result window to the bottom
-    cmd = nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd J'
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd J'
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
+
